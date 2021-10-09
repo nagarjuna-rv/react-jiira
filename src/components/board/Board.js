@@ -15,38 +15,38 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Board = (props) => {
-  const tasks = CONSTANTS.BoardData[0].tasks;
+  const tasks = props.tasks;
   return (
     <div className="board">
       <Box sx={{ flexGrow: 1 }}>
       <Grid direction="row" container rowSpacing={1} >
         <Grid item xs>
              <Item>
-                <BoardColumn 	title = { CONSTANTS.TITLE_TODO }
+                <BoardColumn 	title = { CONSTANTS.TITLE_TODO } category={props.category} moveCard={props.moveCard}
 											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_TODO	} )} />
             </Item>
         </Grid>
         <Grid item xs>
             <Item>
-            <BoardColumn 	title = { CONSTANTS.TITLE_INPROGRESS }
+            <BoardColumn 	title = { CONSTANTS.TITLE_INPROGRESS } category={props.category} moveCard={props.moveCard}
 											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_INPROGRESS	} )} />
 			 </Item>           
         </Grid>
         <Grid item xs>
              <Item>
-             <BoardColumn  title = { CONSTANTS.TITLE_DEV_COMPLETE }
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TITLE_DEV_COMPLETE	} )} />
+             <BoardColumn  title = { CONSTANTS.TITLE_DEV_COMPLETE } category={props.category} moveCard={props.moveCard}
+											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_DEV_COMPLETE	} )} />
              </Item>
           </Grid>
           <Grid item xs>
              <Item>
-             <BoardColumn  title = { CONSTANTS.TITLE_INQA }
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TITLE_INQA	} )} />
+             <BoardColumn  title = { CONSTANTS.TITLE_INQA } category={props.category} moveCard={props.moveCard}
+											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_INQA	} )} />
              </Item>
           </Grid>
           <Grid item xs>
              <Item>
-             <BoardColumn  title = { CONSTANTS.TITLE_DONE }
+             <BoardColumn  title = { CONSTANTS.TITLE_DONE } category={props.category} moveCard={props.moveCard}
 											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_DONE	} )} />
              </Item>
           </Grid>

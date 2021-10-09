@@ -3,7 +3,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import * as React from 'react';
+import CreateTaskModal from '../modal/CreateTaskModal';
 import MultipleSelectCheckmarks from '../multiSelectDropdown/MultiSelectDropdown';
+import * as CONSTANTS from '../../constants/BoardData';
 import SearchBox from '../search/SearchBox';
 import "./Header.scss";
 
@@ -20,6 +22,9 @@ const Header = (props) => {
     const applyFilter = () => {
         props.applyFilter(filters);
     }
+    const addNewCard = (data) => {
+      props.addNewCard(data)
+    }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" className="header">
@@ -29,6 +34,7 @@ const Header = (props) => {
           <MultipleSelectCheckmarks getSelected={getSelected} items={props?.board?.types} label="Type"/>
           <MultipleSelectCheckmarks getSelected={getSelected} items={props?.users} label="Users"/>
           <Button variant="text" onClick={applyFilter}>Apply</Button>
+          <CreateTaskModal variant="contained" addNewCard={addNewCard} epic={CONSTANTS.epic} users={CONSTANTS.users} type={CONSTANTS.types}/>
         </Toolbar>
       </AppBar>
     </Box>

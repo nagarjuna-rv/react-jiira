@@ -39,6 +39,7 @@ export const BoardData = [
 			epic: 'Admin',
 			assignedTo: 'User1',
 			status: TYPE_DONE,
+			type: "Story",
 			points: 3
 		},
 		{
@@ -48,6 +49,7 @@ export const BoardData = [
 			epic: 'Footer',
 			status: TYPE_DONE,
 			assignedTo: 'TestUser',
+			type: "Story",
 			points: 3
 		},
 		{
@@ -56,6 +58,7 @@ export const BoardData = [
 			title: 'Try Hello world',
 			assignedTo: 'TestUser2',
 			epic: 'Feature',
+			type: "Bug",
 			status: TYPE_DONE
 		},
 		{
@@ -64,6 +67,7 @@ export const BoardData = [
 			title: 'Create some little components',
 			epic: 'Login',
 			assignedTo: 'TestUser3',
+			type: "Task",
 			status: TYPE_INPROGRESS
 		},
 		{
@@ -72,6 +76,7 @@ export const BoardData = [
 			title: 'Do a little project with ReduxJS',
 			epic: 'Feature',
 			assignedTo: 'TestUser3',
+			type: "Bug",
 			status: TYPE_TODO
 		}]
 	}];
