@@ -1,0 +1,10 @@
+.board {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	padding: 15px;
+	min-width: 80%;
+	width: 1370px;
+	margin: 125px auto;
+	align-content: strech;
+}
