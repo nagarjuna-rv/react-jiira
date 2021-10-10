@@ -10,15 +10,12 @@ export const TYPE_DONE  = 'DONE';
 export const TYPE_INQA = 'INQA';
 export const TYPE_DEV_COMPLETE = 'DEV_COMPLETE';
 
-// TITLES
+
 export const TITLE_TODO = 'To do';
 export const TITLE_INPROGRESS = 'In Progress';
 export const TITLE_DONE = 'Done';
 export const TITLE_INQA = 'In QA';
 export const TITLE_DEV_COMPLETE = 'Dev Complete';
-// TASK
-export const CLASS_TASK = 'taskCard';
-export const CLASS_COLUMN = 'boardColumn';
 
 export const types = ["Task","Bug","Story"];
 export const category = [TYPE_TODO, TYPE_INPROGRESS, TYPE_DEV_COMPLETE, TYPE_INQA, TYPE_DONE];

@@ -12,6 +12,7 @@ const Card = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
+    event.preventDefault();
     setAnchorEl(event.currentTarget);
   };
 
