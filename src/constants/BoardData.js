@@ -21,7 +21,8 @@ export const CLASS_TASK = 'taskCard';
 export const CLASS_COLUMN = 'boardColumn';
 
 export const types = ["Task","Bug","Story"];
-export const category = [TYPE_TODO, TYPE_INPROGRESS, TYPE_DONE, TYPE_INQA, TYPE_DEV_COMPLETE];
+export const category = [TYPE_TODO, TYPE_INPROGRESS, TYPE_DEV_COMPLETE, TYPE_INQA, TYPE_DONE];
+export const categoryDisplay = {'TODO':TITLE_TODO, 'INPROGRESS':TITLE_INPROGRESS, 'DEV_COMPLETE':TITLE_DEV_COMPLETE, 'INQA': TITLE_INQA, 'DONE': TITLE_DONE};
 export const epic = ["Admin", "Footer", "Header", "Feature", "User Profile", "Login"];
 export const users = ["User1", "TestUser", "TestUser2", "TestUser3"];
 
@@ -35,7 +36,8 @@ export const BoardData = [
 		tasks: [{
 			id: '1',
 			priority: PRIORITY_HIGHEST,
-			title: 'Read WebPack documentation',
+			title: 'Complete Jiira Board',
+			description: 'Complete Jiira Kinban Board desing',
 			epic: 'Admin',
 			assignedTo: 'User1',
 			status: TYPE_DONE,
@@ -46,6 +48,7 @@ export const BoardData = [
 			id: '2',
 			priority: PRIORITY_HIGHEST,
 			title: 'Install dependencies',
+			description: 'Create react app and install required dependencies',
 			epic: 'Footer',
 			status: TYPE_DONE,
 			assignedTo: 'TestUser',
@@ -55,7 +58,8 @@ export const BoardData = [
 		{
 			id: '3',
 			priority: PRIORITY_HIGH,
-			title: 'Try Hello world',
+			title: 'Filter Failed',
+			description: 'Filter not working as expected',
 			assignedTo: 'TestUser2',
 			epic: 'Feature',
 			type: "Bug",
@@ -67,6 +71,7 @@ export const BoardData = [
 			title: 'Create some little components',
 			epic: 'Login',
 			assignedTo: 'TestUser3',
+			description: 'Create components',
 			type: "Task",
 			status: TYPE_INPROGRESS
 		},
@@ -74,6 +79,7 @@ export const BoardData = [
 			id: '5',
 			priority: PRIORITY_LOW,
 			title: 'Do a little project with ReduxJS',
+			description: '',
 			epic: 'Feature',
 			assignedTo: 'TestUser3',
 			type: "Bug",

@@ -20,36 +20,16 @@ const Board = (props) => {
     <div className="board">
       <Box sx={{ flexGrow: 1 }}>
       <Grid direction="row" container rowSpacing={1} >
-        <Grid item xs>
-             <Item>
-                <BoardColumn 	title = { CONSTANTS.TITLE_TODO } category={props.category} moveCard={props.moveCard}
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_TODO	} )} />
-            </Item>
-        </Grid>
-        <Grid item xs>
-            <Item>
-            <BoardColumn 	title = { CONSTANTS.TITLE_INPROGRESS } category={props.category} moveCard={props.moveCard}
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_INPROGRESS	} )} />
-			 </Item>           
-        </Grid>
-        <Grid item xs>
-             <Item>
-             <BoardColumn  title = { CONSTANTS.TITLE_DEV_COMPLETE } category={props.category} moveCard={props.moveCard}
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_DEV_COMPLETE	} )} />
-             </Item>
-          </Grid>
-          <Grid item xs>
-             <Item>
-             <BoardColumn  title = { CONSTANTS.TITLE_INQA } category={props.category} moveCard={props.moveCard}
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_INQA	} )} />
-             </Item>
-          </Grid>
-          <Grid item xs>
-             <Item>
-             <BoardColumn  title = { CONSTANTS.TITLE_DONE } category={props.category} moveCard={props.moveCard}
-											tasks = { tasks.filter( task => {return task.status === CONSTANTS.TYPE_DONE	} )} />
-             </Item>
-          </Grid>
+        {
+          props?.category?.map((category)=>(
+            <Grid item xs key={category}>
+              <Item>
+                  <BoardColumn 	title = { CONSTANTS.categoryDisplay[category] } category={props.category} moveCard={props.moveCard}
+                        tasks = { tasks.filter( task => {return task.status === category	} )} />
+              </Item>
+            </Grid>
+          ))
+        }
       </Grid>
     </Box>
      </div>

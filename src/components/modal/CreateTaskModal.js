@@ -52,6 +52,7 @@ const handleSubmit = (event) =>{
                   id="title"
                   label="Title"
                   name="title"
+                  defaultValue=""
                 />
               </Grid>
               <Grid item xs={12}>
@@ -63,6 +64,7 @@ const handleSubmit = (event) =>{
                   name="description"
                   label="Description"
                   id="description"
+                  defaultValue=""
                 />
               </Grid>
               <Grid item xs={12}>
@@ -72,6 +74,7 @@ const handleSubmit = (event) =>{
                     id="epic"
                     label="Epic"
                     labelId="epic"
+                    defaultValue=""
                     fullWidth
                     >
                          {props?.epic?.map((name) => (
@@ -89,6 +92,7 @@ const handleSubmit = (event) =>{
                     id="type"
                     label="Type"
                     labelId="type"
+                    defaultValue=""
                     fullWidth
                     >
                          {props?.type?.map((name) => (
@@ -106,6 +110,7 @@ const handleSubmit = (event) =>{
                     id="assignTo"
                     label="Assign to:"
                     labelId="assignTo"
+                    defaultValue=""
                     fullWidth
                     >
                          {props?.users?.map((name) => (

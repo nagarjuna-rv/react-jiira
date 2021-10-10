@@ -4,10 +4,11 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import * as CONSTANTS from '../../constants/BoardData';
+
 import './Card.scss';
 
 const Card = (props) => {
-  const [showMore, setShowMore] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -47,8 +48,8 @@ const Card = (props) => {
                 }}
                >
                  {props?.category?.filter(status => {return status !== props?.task?.status	})?.map((name) => (
-                 <ClickAwayListener onClickAway={handleClose}>
-                    <Typography sx={{padding: '0px 2px', border: '0.1rem solid grey', cursor: 'pointer'}} onClick={() => props.moveCard(props.task.id, name)}>{name}</Typography>
+                 <ClickAwayListener onClickAway={handleClose} key={name}>
+                    <Typography sx={{padding: '0px 2px', border: '0.1rem solid grey', cursor: 'pointer'}} onClick={() => props.moveCard(props.task.id, name)}>{CONSTANTS.categoryDisplay[name]}</Typography>
                  </ClickAwayListener>
                  ))}
                </Popover>

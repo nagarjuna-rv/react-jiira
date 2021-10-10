@@ -22,13 +22,16 @@ const MenuProps = {
 
 const MultipleSelectCheckmarks = (props) => {
   const [selected, setSelected] = React.useState([]);
-
+  React.useEffect(()=>{
+    if(props.clearFilters)
+    setSelected([]);
+  },[props.clearFilters])
   const handleChange = (event) => {
+    event.preventDefault();
     const {
       target: { value },
     } = event;
     setSelected(
-      // On autofill we get a the stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
     const val = {};
